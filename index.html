@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Trancz Fashion - Home</title>
+
+  <style>
+    body {
+      font-family: "Poppins", Arial, sans-serif;
+      margin: 0;
+      color: #222;
+      line-height: 1.7;
+      background-color: #fff;
+    }
+
+    header {
+      background: #000;
+      color: #fff;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 60px;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    header img {
+      height: 30px; /* adjust if you want smaller or larger */
+      cursor: pointer;
+    }
+
+    nav a {
+      color: #fff;
+      margin-left: 25px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      text-decoration: none;
+    }
+
+    nav a:hover {
+      color: #ccc;
+    }
+
+    /* HERO */
+    .hero {
+      position: relative;
+      height: 90vh;
+      background: url('pictures/banner.jpg') center/cover no-repeat;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: rgba(0,0,0,0.45);
+    }
+
+    .hero-content {
+      position: relative;
+      color: #fff;
+      text-align: center;
+      max-width: 900px;
+      padding: 20px;
+    }
+
+    .hero-content h1 {
+      font-size: 3rem;
+      font-weight: 600;
+      margin-bottom: 15px;
+    }
+
+    .hero-subtext {
+      font-size: 1.15rem;
+      max-width: 800px;
+      margin: 0 auto;
+      color: #ffffff;
+    }
+
+    section {
+      padding: 60px 10%;
+    }
+
+    section h2 {
+      text-align: center;
+      font-size: 2.4rem;
+      margin-bottom: 40px;
+      letter-spacing: 1px;
+    }
+
+    section p {
+      font-size: 1.05rem;
+      color: #444;
+      margin-bottom: 15px;
+    }
+
+    .split {
+      display: flex;
+      align-items: flex-start;
+      gap: 50px;
+      flex-wrap: wrap;
+    }
+
+    .split img {
+      width: 48%;
+      border-radius: 0px;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+    }
+
+    .split .text {
+      flex: 1;
+      /*min-width: 300px;*/
+    }
+
+    .split .text p {
+      margin-bottom: 10px;
+    }
+
+    .reverse {
+      flex-direction: row-reverse;
+    }
+
+    footer {
+      background: #000;
+      color: #fff;
+      text-align: center;
+      padding: 25px 10px;
+      font-size: 0.95rem;
+    }
+
+    footer a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: 600;
+      margin: 0 8px;
+    }
+
+    footer a:hover {
+      color: #ccc;
+    }
+
+    .hamburger {
+      display: none;
+      font-size: 28px;
+      cursor: pointer;
+      color: white;
+    }
+
+    @media (max-width: 768px) {
+      nav {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        background: #000;
+        text-align: center;
+        position: absolute;
+        top: 70px;
+        left: 0;
+      }
+
+      nav a {
+        padding: 15px 0;
+        border-top: 1px solid #222;
+      }
+
+      .hamburger {
+        display: block;
+      }
+
+      nav.active {
+        display: flex;
+      }
+.hero-content h1 {
+    font-size: 1rem;
+}
+    }
+
+    .menu-toggle {
+      display: none;
+      font-size: 28px;
+      cursor: pointer;
+      color: white;
+    }
+
+    @media(max-width: 900px) {
+      nav {
+        display: none;
+        flex-direction: column;
+        background: #000;
+        position: absolute;
+        top: 60px;
+        right: 0;
+        width: 100%;
+        text-align: center;
+        padding: 20px 0;
+      }
+      nav.active {
+        display: flex;
+      }
+      .menu-toggle {
+        display: block;
+      }
+      nav a {
+        padding: 12px 0;
+        border-bottom: 1px solid #333;
+      }
+      nav a:last-child {
+        border-bottom: none;
+      }
+	.split img {
+    width: 100%;
+    }
+	.hero-content h1 {
+    font-size: 2rem;
+}
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <a href="index.html">
+      <img src="pictures/trancz-white-logo.png" alt="Trancz Fashion Logo">
+    </a>
+
+    <div class="menu-toggle" id="mobile-menu">
+      &#9776;
+    </div>
+
+    <nav id="navbar">
+      <a href="index.html">Home</a>
+      <a href="services.html">Services</a>
+      <a href="faq.html">FAQ</a>
+    </nav>
+  </header>
+
+  <script>
+    const menuToggle = document.getElementById("mobile-menu");
+    const nav = document.getElementById("navbar");
+
+    menuToggle.addEventListener("click", () => {
+      nav.classList.toggle("active");
+    });
+
+    document.querySelectorAll("#navbar a").forEach(link => {
+      link.addEventListener("click", () => {
+        nav.classList.remove("active");
+      });
+    });
+  </script>
+
+  <section class="hero">
+    <div class="hero-content">
+      <h1>Premium Garment Manufacturing & Private Label Solutions</h1>
+      <p class="hero-subtext">Delivering quality, style, and reliability — end-to-end fashion production built for modern brands.</p>
+    </div>
+  </section>
+
+  <section>
+    <h2>About Trancz Fashion</h2>
+    <p>Trancz Fashion, based in Mumbai, India, is a <b>leading garment manufacturing company</b> specializing in premium apparel production, fabric sourcing, and private label solutions. Founded by <b>Rohit Jain</b>, Trancz Fashion is a <b>GST-registered</b> Indian manufacturer delivering high-quality, design-driven clothing for domestic brands and businesses. We specialize in end-to-end garment development — from concept and pattern design to stitching, finishing, and packaging — offering complete FOB and DDP solutions for fashion, lifestyle, and corporate clients.</p>
+
+    <p>Our expertise covers a wide spectrum of casualwear, streetwear, corporate uniforms, and custom brand collections, with capabilities in <b>graphic development, sampling, printing, embroidery, dyeing, and washing</b>. Backed by a skilled team and modern production infrastructure, Trancz Fashion blends creative innovation with manufacturing precision to meet the fast-evolving demands of India’s apparel industry.</p>
+
+    <p>With a focus on quality, speed, and ethical production, we ensure every garment reflects excellence — from fabric selection to final delivery. At Trancz Fashion, we believe in long-term partnerships built on trust, transparency, and performance. Whether you’re a growing label or an established brand, we are here to bring your fashion ideas to life with reliability and style.</p>
+
+    <p>Let’s collaborate and create something remarkable together.</p>
+  </section>
+
+  <section class="split">
+    <img src="pictures/process.jpg" alt="Process Image">
+    <div class="text">
+      <h2>Vision</h2>
+      <p>Trancz Fashion is focused on providing our customers with quality, fashion garments through hassle-free processes at the best possible turnaround time. Our systems, processes, management team, and expertise make us a <b>one-stop solution</b> for brands, meeting their requirements right from sourcing, pattern making, sampling, and production to finalizing delivery partners.</p> <p>At Trancz Fashion, we understand that brands need a manufacturing partner who is reliable, efficient, and aligned with their creative vision. Delays, miscommunication, or inconsistent quality can slow down a brand’s growth and impact its reputation. That’s why we have built <b>robust management structures, streamlined systems, and a culture of on-time delivery</b> — ensuring every project runs smoothly from concept to final product.</p> <p>By leveraging these strengths, our goal is to become a brand-friendly manufacturer, where working with us is simple, predictable, and productive. We are committed to creating long-term partnerships that let brands focus on growth while we handle operational excellence.</p> 
+    </div>
+  </section>
+
+  <section class="split reverse">
+    <img src="pictures/facility.jpg" alt="Facility Image">
+    <div class="text">
+      <h2>Our Facility</h2>
+      <p>Over the years, Trancz Fashion has collaborated with a wide range of streetwear and fast-fashion brandss, providing end-to-end services including fabric and textile sourcing, design development, size chart finalization, and pattern making.</p> <p>We operate from a <b>4,500 sq. ft. office space, equipped with 35 modern machines</b> and a <b>dedicated team of 32 skilled professionals</b>, organized into Onboarding, Sampling, and Production departments to ensure seamless workflow.</p> <p>Our Production Team, comprising experienced karigars and bulk-cutting masters, delivers fast, efficient, and large-scale manufacturing without compromising on quality.</p> <p>To maintain high standards and smooth client coordination, we have implemented a <b>5-level Quality Control Process</b> along with a dedicated Follow-Up Team, minimizing errors and ensuring clear, consistent communication at every stage.</p>
+    </div>
+  </section>
+
+  <section class="split">
+    <img src="pictures/fashion.jpg" alt="Fashion Image">
+    <div class="text">
+      <h2>We Know Fashion Inside Out</h2>
+      <p>At Trancz Fashion, we have spent years mastering the intricacies of the clothing industry, understanding what it truly takes to build and grow a successful brand. We know how to turn a vision into a tangi ble, profitable reality.</p> <p>From strategic planning to seamless production, we support brands at every stage — helping them launch, expand, or reposition in a fast-changing market. By combining market research, trend insights, and operational expertise, we ensure that every decision — from design and sourcing to production and delivery — contributes to a brand’s long-term success.</p> <p><b>Our structured approach, experienced team, and streamlined systems</b> make working with us efficient, reliable, and brand-friendly, so our clients can focus on growth while we handle execution.</p>    
+   </div>
+  </section>
+
+  <footer>
+    <a href="https://instagram.com/tranczfashion" target="_blank">🅾 @tranczfashion</a> |
+    <a href="https://wa.me/918097283931" target="_blank">💬 WhatsApp: 8097283931</a>
+  </footer>
+
+</body>
+</html>
