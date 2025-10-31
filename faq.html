@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Trancz Fashion - FAQ</title>
+
+<style>
+  body {
+    font-family: "Poppins", Arial, sans-serif;
+    margin: 0;
+    color: #222;
+    line-height: 1.7;
+    background-color: #fff;
+  }
+
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
+
+  /* ---------- HEADER ---------- */
+  header {
+    background: #000;
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 30px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    transition: opacity 0.3s ease;
+  }
+
+  header img {
+    height: 30px;
+    cursor: pointer;
+    transition: opacity 0.3s ease;
+  }
+
+  /* ---------- NAVIGATION ---------- */
+  nav {
+    display: flex;
+    align-items: center;
+  }
+
+  nav a {
+    margin-left: 25px;
+    color: #fff;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    text-underline-offset: 4px;
+  }
+
+  nav a:hover {
+    color: #ccc;
+  }
+
+  /* ---------- HAMBURGER MENU ---------- */
+  .menu-toggle {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 25px;
+    height: 20px;
+    cursor: pointer;
+    position: absolute;
+    top: 18px;
+    right: 25px;
+    z-index: 1100;
+  }
+
+  .menu-toggle span {
+    display: block;
+    height: 3px;
+    background: white;
+    border-radius: 2px;
+  }
+
+  /* ---------- MOBILE MENU ---------- */
+  @media (max-width: 900px) {
+    nav {
+      display: none;
+      flex-direction: column;
+      width: 100%;
+      background: #000;
+      position: absolute;
+      top: 60px;
+      left: 0;
+      padding: 20px 0;
+      text-align: center;
+    }
+
+    nav.active {
+      display: flex;
+    }
+
+    .menu-toggle {
+      display: flex;
+    }
+
+    nav a {
+      margin: 10px 0;
+      text-align: center;
+      font-size: 1.1rem;
+      border-bottom: 1px solid #333;
+      text-decoration: none; /* ✅ keep underline on mobile */
+      text-underline-offset: 4px;
+    }
+
+    nav a:last-child {
+      border-bottom: none;
+    }
+
+    /* ✅ Hide logo when menu open */
+    header.menu-open img {
+      opacity: 0;
+      pointer-events: none;
+    }
+  }
+
+  /* ---------- HERO IMAGE ---------- */
+  .hero {
+    position: relative;
+    height: 42vh;
+    min-height: 300px;
+    background: url('pictures/F.png') center/cover no-repeat;
+    display: block;
+  }
+
+  /* ---------- FAQ SECTION ---------- */
+  section {
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 20px;
+  }
+
+  h2 {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 40px;
+    font-weight: 700;
+  }
+
+  details {
+    background: #f7f7f7;
+    margin-bottom: 10px;
+    padding: 15px 20px;
+    border-radius: 5px;
+    border: 1px solid #e0e0e0;
+    cursor: pointer;
+    transition: background 0.3s ease;
+  }
+
+  details:hover {
+    background: #f1f1f1;
+  }
+
+  summary {
+    font-weight: 600;
+    font-size: 1rem;
+    outline: none;
+  }
+
+  details[open] summary {
+    color: #000;
+  }
+
+  details p {
+    margin-top: 10px;
+    font-size: 1rem;
+    color: #444;
+    line-height: 1.6;
+  }
+
+  /* ---------- FOOTER ---------- */
+  footer {
+    background: #000;
+    color: #fff;
+    text-align: center;
+    padding: 25px 10px;
+    font-size: 0.95rem;
+  }
+
+  footer a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 600;
+    margin: 0 8px;
+  }
+
+  footer a:hover {
+    color: #ccc;
+  }
+</style>
+</head>
+
+<body>
+
+<header id="header">
+  <a href="index.html">
+    <img src="pictures/trancz-white-logo.png" alt="Trancz Fashion Logo">
+  </a>
+
+  <!-- ✅ Hamburger menu -->
+  <div class="menu-toggle" id="menu-toggle">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+
+  <nav id="navbar">
+    <a href="index.html">Home</a>
+    <a href="services.html">Services</a>
+    <a href="faq.html">FAQ</a>
+  </nav>
+</header>
+
+<!-- ✅ HERO IMAGE -->
+<div class="hero" role="img" aria-label="FAQ hero image"></div>
+
+<section>
+  <h2>Frequently Asked Questions</h2>
+
+  <details>
+    <summary>Do we provide samples before commencing production?</summary>
+    <p>Absolutely. We initiate the process by developing 10–12 sample designs to ensure quality and design accuracy. This approach allows us to showcase our capabilities and align with your expectations before moving into full-scale production.</p>
+  </details>
+
+  <details>
+    <summary>Why is full payment required for sample development?</summary>
+    <p>Sample development is a cost-intensive process. The 100% advance payment covers the expenses incurred by our team, including materials and labor. This practice ensures that we can dedicate the necessary resources to bring your designs to life.</p>
+  </details>
+
+  <details>
+    <summary>What is the minimum order quantity (MOQ) for production?</summary>
+    <p>Our standard MOQ is 1,000 pieces per project, with a minimum of 70–100 pieces per style. This quantity is essential to optimize production efficiency and manage costs effectively.</p>
+  </details>
+
+  <details>
+    <summary>What is the typical lead time for project delivery?</summary>
+    <p>The delivery timeline varies based on project specifics. Generally, we require a minimum of one month after finalizing designs, samples, and approvals to ensure timely and quality production.</p>
+  </details>
+
+  <details>
+    <summary>Do we handle fabric sourcing?</summary>
+    <p>Yes, we can source fabrics for your project. While we recommend providing sample fabrics during the sampling phase, we also offer bulk fabric sourcing at competitive rates. Please note that sourcing specialized fabrics may involve additional time and costs.</p>
+  </details>
+
+  <details>
+    <summary>Do we offer credit facilities?</summary>
+    <p>No, we operate on a 50% advance and 50% upon delivery payment structure. This policy applies to all projects, regardless of size, to maintain transparency and trust in our business relationships.</p>
+  </details>
+
+  <details>
+    <summary>Do we provide private label manufacturing services?</summary>
+    <p>Absolutely. We offer comprehensive private label solutions, including custom tags, labels, and branding, to help establish and promote your brand identity.</p>
+  </details>
+
+  <details>
+    <summary>Can we assist with fabric customization?</summary>
+    <p>Yes, we specialize in developing custom fabrics. Whether it's knit or woven, we can create fabrics tailored to your specifications, including yarn composition and weaving patterns, subject to minimum order quantities.</p>
+  </details>
+
+  <details>
+    <summary>Why might you choose not to work with us?</summary>
+    <p>We value confidentiality and professionalism. We do not disclose client information or share complete portfolios publicly. Our work is exclusive and can be viewed only at our studio. Additionally, we do not offer free services or credit facilities, ensuring that our business practices remain transparent and mutually respectful.</p>
+  </details>
+
+</section>
+
+<footer>
+  <a href="https://instagram.com/tranczfashion" target="_blank">🅾 @tranczfashion</a> |
+  <a href="https://wa.me/918097283931" target="_blank">💬 WhatsApp: 8097283931</a>
+</footer>
+
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+  const menuToggle = document.getElementById("menu-toggle");
+  const navMenu = document.getElementById("navbar");
+  const header = document.getElementById("header");
+
+  menuToggle.addEventListener("click", () => {
+    navMenu.classList.toggle("active");
+    header.classList.toggle("menu-open");
+  });
+
+  navMenu.querySelectorAll("a").forEach(link => {
+    link.addEventListener("click", () => {
+      navMenu.classList.remove("active");
+      header.classList.remove("menu-open");
+    });
+  });
+});
+</script>
+
+</body>
+</html>
